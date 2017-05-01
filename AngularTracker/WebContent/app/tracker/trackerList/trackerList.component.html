@@ -1,0 +1,39 @@
+<tracker-edit gas-log='vm.selected' ng-show='vm.selected' go-back='vm.displayTable()' on-update='vm.updateGasLog(gasLog)'></tracker-edit>
+ 
+ 
+<table class="table" ng-show='vm.showTable'>
+	<tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Gallons</th>
+        <th>Cost</th>
+        <th>Odometer</th>
+        <th>Miles</th>
+        <th>MPG</th>
+        <th>Cost Per Mile</th>
+        <th>Edit</th>
+        <th>Delete</th>
+	</tr>
+	<tr ng-repeat="log in vm.list"> 
+		<td>{{log.id}}</td>
+		<td>{{log.date}}</td>
+		<td>{{log.gallons}}</td>
+		<td>{{log.cost}}</td>
+		<td>{{log.odometer}}</td>
+		<td>{{log.miles}}</td>
+		<td>{{log.miles/log.gallons | number:2}}</td>
+		<td>{{log.cost/log.miles | currency}}</td>
+		<td><button ng-click="vm.displayGasLog(log)">Edit</button></td>
+		<td><button ng-click="vm.destroy(log.id)">Delete</button></td>		
+	</tr>
+</table>
+
+<h1 ng-show='vm.showTable' id='addHeader'>Add New Gas Log</h1>
+<form class="addTable" ng-show='vm.showTable'>
+  <input class="addInput" type="text" placeholder="Date (yyyy-mm-dd)" ng-model="gasLog.date"/><br/>
+  <input class="addInput" type="text" placeholder="Gallons" ng-model="gasLog.gallons"/><br/>
+  <input class="addInput" type="text" placeholder="Cost" ng-model="gasLog.cost"/><br/>
+  <input class="addInput" type="text" placeholder="Odometer" ng-model="gasLog.odometer"/><br/>
+  <input class="addInput" type="text" placeholder="Miles" ng-model="gasLog.miles"/><br/>
+  <input class="addButton" type="submit" value="Add Item" ng-click="vm.add(gasLog)"/>
+</form>

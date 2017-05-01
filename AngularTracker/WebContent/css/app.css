@@ -1,0 +1,48 @@
+#trackerHeader {
+	margin: 25px;
+	font-size: 105px;
+	color: darkgrey;
+}
+
+#addHeader {
+	margin: auto;
+	text-align: center;
+	padding: 25px;
+}
+
+.addTable {
+	margin: auto;
+	text-align: center;
+}
+
+.addInput {
+	padding: 5px;
+	margin: 2px;
+}
+
+.editInput {
+	padding: 5px;
+	margin: 2px;
+}
+
+#editForm {
+	margin: auto;
+	text-align: center;
+}
+
+.addButton {
+	padding: 5px;
+	margin: 5px;
+}
+
+.table {
+	margin-left: 50px;
+}
+
+#tableEdit {
+	margin-right: 250px;
+}
+
+.btn1 {
+	margin-left:50px; 
+}

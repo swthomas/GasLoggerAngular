@@ -1,0 +1,38 @@
+
+<div ng-hide="vm.editMode">
+
+	<table class='table' id='tableEdit'>
+		<tr>
+			<td><b>ID:</b> {{vm.gasLog.id}}</td>
+		</tr>
+		<tr>
+			<td><b>Date:</b> {{vm.gasLog.date}}</td>
+		</tr>		
+		<tr>
+			<td><b>Cost:</b> {{vm.gasLog.cost}}</td>
+		</tr>
+		<tr>
+			<td><b>Miles:</b> {{vm.gasLog.miles}}</td>
+		</tr>
+		<tr>
+			<td><b>Gallons:</b> {{vm.gasLog.gallons}}</td>
+		</tr>	
+		<tr>
+			<td><b>Odometer:</b> {{vm.gasLog.odometer}}</td>
+		</tr>
+	</table>
+	<button ng-click='vm.backButton()' class="btn1">Back</button>
+	<button ng-click='vm.setEditGasLog()' class="btn1">Edit</button>
+</div>
+
+
+<form ng-show='vm.editMode' id='editForm'>
+	<h1>Edit Gas Log Id: {{vm.gasLog.id}}</h1>
+	<input class="editInput" type="text" ng-model="vm.gasLog.date"/><br/>
+	<input class="editInput" type="text" ng-model="vm.gasLog.cost"/><br/>
+	<input class="editInput" type="text" ng-model="vm.gasLog.miles"/><br/>
+	<input class="editInput" type="text" ng-model="vm.gasLog.gallons"/><br/>
+	<input class="editInput" type="text" ng-model="vm.gasLog.odometer"/><br/>
+	<input class="editInput" type="submit" value="Save" ng-click="vm.save()" /> 
+	<input class="editInput" type="submit" value="Cancel" ng-click="vm.cancel()" />
+</form>
